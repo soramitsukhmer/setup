@@ -102,12 +102,16 @@ brewbundle() {
 
 # main
 main() {
+    ohai "Platform: macOS"
+    ohai "OS Type: $OSTYPE"
+
+    divider
     install_homebrew
     update_homebrew
 
     divider
     ohai "Setup environment"
-    brewbundle "prerequisite"           "homebrew/macos"
+    brewbundle "environment"           "homebrew/macos"
 
     divider
     ohai "Installation successful!"
