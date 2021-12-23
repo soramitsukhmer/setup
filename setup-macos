@@ -111,7 +111,11 @@ main() {
 
     divider
     ohai "Setup environment"
-    brewbundle "environment"           "homebrew/macos"
+    brewbundle "prerequisite"           "homebrew/commons"
+    brewbundle "keyboards and fonts"    "homebrew/fonts"
+    brewbundle "development tools"      "homebrew/developments"
+    brewbundle "development stacks"     "homebrew/stack"
+    brewbundle "utilities"              "homebrew/utilities"
 
     divider
     ohai "Installation successful!"
