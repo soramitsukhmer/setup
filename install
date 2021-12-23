@@ -82,7 +82,15 @@ do_download() {
 do_install() {
     ohai "Running setup script..."
     cd ${WORKDIR}
-    execute "bash" "./setup"
+    case "$OSTYPE" in
+        solaris*) throw_platform_unsupport ;;
+        darwin*)  execute "bash" "./setup-macos" ;;
+        linux*)   execute "bash" "./setup-linux" ;;
+        bsd*)     throw_platform_unsupport ;;
+        msys*)    throw_platform_unsupport ;;
+        cygwin*)  throw_platform_unsupport ;;
+        *)        echo "unknown: $OSTYPE" ;;
+    esac
 }
 
 do_cleanup() {
@@ -94,6 +102,10 @@ do_cleanup() {
     rm -rf "${WORKDIR}"
 
     DONE_CLEANUP=1
+}
+
+throw_platform_unsupport() {
+    error "Platform $OSTYPE does not supported!"
 }
 
 execute "main" "$@"
