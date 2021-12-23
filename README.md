@@ -4,6 +4,12 @@ An automated platform setup and provisioning scripts for @soramitsukhmer.
 
 > Requested by @phuylai-oeung and @phyrumsk
 
+## Supported platforms
+
+- [x] macOS
+- [ ] Linux
+- [ ] Windows 10/11
+
 ### Install & Update Script
 
 ```sh
