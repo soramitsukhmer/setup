@@ -82,14 +82,12 @@ do_download() {
 do_install() {
     ohai "Running setup script..."
     cd ${WORKDIR}
+
+    # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script/18434831
     case "$OSTYPE" in
-        solaris*) throw_platform_unsupport ;;
         darwin*)  execute "bash" "./setup-macos" ;;
         linux*)   execute "bash" "./setup-linux" ;;
-        bsd*)     throw_platform_unsupport ;;
-        msys*)    throw_platform_unsupport ;;
-        cygwin*)  throw_platform_unsupport ;;
-        *)        echo "unknown: $OSTYPE" ;;
+        *)        throw_platform_unsupport ;;
     esac
 }
 
