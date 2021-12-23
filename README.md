@@ -23,7 +23,7 @@ curl -o- https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | s
 To test drive the installer set `SETUP_DRY_RUN=1`
 
 ```sh
-curl -o- https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | SETUP_DRY_RUN=1 sh
+curl -o- <url-to-installer> | SETUP_DRY_RUN=1 sh
 ```
 
 **Verbose mode**:
@@ -32,7 +32,7 @@ Set the `CI=1` to run in verbose mode.
 
 
 ```sh
-curl -o- https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | CI=1 sh
+curl -o- <url-to-installer> | CI=1 sh
 ```
 
 ## References
