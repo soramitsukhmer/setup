@@ -1,0 +1,52 @@
+tap "github/gh"
+tap "homebrew/cask-fonts"
+tap "pp-spaces/khmer-unicode"
+
+# Commons
+brew "stow"
+brew "antigen"
+brew "svn"
+brew "whalebrew" # Homebrew, but with Docker images
+
+# Fonts & Keyboard layouts
+cask "khmer-unicode-layout"
+cask "font-fira-code"
+cask "font-khmeros-bundle"
+cask "font-open-khmer-school"
+cask "font-kantumruy"
+cask "font-kdam-thmor"
+
+# Developments
+brew "git"
+brew "gh"
+
+# Developments ->  Node.js
+brew "node@14"              # Node v14
+brew "yarn"                 # Yarn
+
+# Utilities
+brew "htop"
+brew "tree"                 # List directories in a tree structure
+brew "thefuck"              # No fuck given
+brew "jq"                   # lightweight and flexible command-line JSON processor
+brew "watch"                # Execute a program periodically, showing output fullscreen
+
+# Casks
+cask "google-chrome"                # Google Chrome
+cask "firefox"                      # Firefox
+
+# Casks -> Developments
+cask "visual-studio-code"           # Code editing. Redefined.
+cask "fork"                         # Fast and friendly git client
+cask "iterm2"                       # iTerm2 is a replacement for Terminal
+cask "tableplus"                    # TablePlus
+cask "docker"                       # Docker
+cask "insomnia"                     # Insomnia
+cask "virtualbox"                   # Oracle VirtualBox
+cask "gpg-suite"                    # GPG Suite
+
+# Casks -> Additionals
+cask "google-drive"                 # Google Drive
+cask "chrome-remote-desktop-host"   # Chrome Remote Desktop Host
+cask "mounty"                       # NTFS Helper
+cask "cheatsheet"                   # Know your short cuts

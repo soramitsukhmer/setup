@@ -106,6 +106,10 @@ main() {
     update_homebrew
 
     divider
+    ohai "Setup environment"
+    brewbundle "prerequisite"           "homebrew/Brewfile"
+
+    divider
     ohai "Installation successful!"
 }
 
