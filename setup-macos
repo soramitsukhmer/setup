@@ -107,7 +107,7 @@ main() {
 
     divider
     ohai "Setup environment"
-    brewbundle "prerequisite"           "homebrew/Brewfile"
+    brewbundle "prerequisite"           "homebrew/macos"
 
     divider
     ohai "Installation successful!"
