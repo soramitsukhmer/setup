@@ -2,6 +2,7 @@
 brew "mas"
 
 # CLI Tools
+brew "certstrap"            # Tools to bootstrap CAs, certificate requests, and signed certificates.
 brew "tldr"
 brew "htop"
 brew "bat"                  # "cat" on steroids
