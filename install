@@ -7,9 +7,9 @@ WORKDIR=/tmp/soramitsukhmer-setup
 # helpers
 # string formatters
 if [[ -t 1 ]]; then
-    tty_escape() { printf "\033[%sm" "$1"; }
+	tty_escape() { printf "\033[%sm" "$1"; }
 else
-    tty_escape() { :; }
+	tty_escape() { :; }
 fi
 
 tty_mkbold() { tty_escape "1;$1"; }
@@ -21,40 +21,40 @@ tty_bold="$(tty_mkbold 39)"
 tty_reset="$(tty_escape 0)"
 
 shell_join() {
-    local arg
-    printf "%s" "$1"
-    shift
-    for arg in "$@"; do
-        printf " "
-        printf "%s" "${arg// /\ }"
-    done
+	local arg
+	printf "%s" "$1"
+	shift
+	for arg in "$@"; do
+		printf " "
+		printf "%s" "${arg// /\ }"
+	done
 }
 
 chomp() {
-    printf "%s" "${1/"$'\n'"/}"
+	printf "%s" "${1/"$'\n'"/}"
 }
 
 ohai() {
-    printf "${tty_blue}==>${tty_bold} %s${tty_reset}\n" "$(shell_join "$@")"
+	printf "${tty_blue}==>${tty_bold} %s${tty_reset}\n" "$(shell_join "$@")"
 }
 
 warn() {
-    printf "${tty_yellow}Warning${tty_reset}: %s\n" "$(chomp "$1")"
+	printf "${tty_yellow}Warning${tty_reset}: %s\n" "$(chomp "$1")"
 }
 
 error(){
-    printf "${tty_red}Error${tty_reset}: %s\n" "$(chomp "$1")" >>/dev/stderr
+	printf "${tty_red}Error${tty_reset}: %s\n" "$(chomp "$1")" >>/dev/stderr
 }
 
 abort() {
-  printf "%s\n" "$1"
-  exit 1
+	printf "%s\n" "$1"
+	exit 1
 }
 
 execute() {
-  if ! "$@"; then
-    abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
-  fi
+	if ! "$@"; then
+		abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
+	fi
 }
 
 # main
@@ -62,48 +62,48 @@ trap 'do_cleanup' ERR TERM EXIT
 trap 'do_cleanup' SIGINT SIGTERM
 
 main() {
-    do_preflight
-    do_download
-    do_install
+	do_preflight
+	do_download
+	do_install
 }
 
 do_preflight() {
-    ohai "Running pre-flight..."
-    unset DONE_CLEANUP
+	ohai "Running pre-flight..."
+	unset DONE_CLEANUP
 }
 
 do_download() {
-    ohai "Downloading setup script..."
-    if [ ! -d "${WORKDIR}" ]; then
-        execute "git" "clone" "--depth=1" "${REPO}" "${WORKDIR}"
-    fi
+	ohai "Downloading setup script..."
+	if [ ! -d "${WORKDIR}" ]; then
+		execute "git" "clone" "--depth=1" "${REPO}" "${WORKDIR}"
+	fi
 }
 
 do_install() {
-    ohai "Running setup script..."
-    cd ${WORKDIR}
+	ohai "Running setup script..."
+	cd ${WORKDIR}
 
-    # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script/18434831
-    case "$OSTYPE" in
-        darwin*)  execute "bash" "./setup-macos" ;;
-        linux*)   execute "bash" "./setup-linux" ;;
-        *)        throw_platform_unsupport ;;
-    esac
+	# https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script/18434831
+	case "$OSTYPE" in
+		darwin*)  execute "bash" "./setup-macos" ;;
+		linux*)   execute "bash" "./setup-linux" ;;
+		*)        throw_platform_unsupport ;;
+	esac
 }
 
 do_cleanup() {
-    if [[ -n "${DONE_CLEANUP}" ]]; then
-        return 0
-    fi
+	if [[ -n "${DONE_CLEANUP}" ]]; then
+		return 0
+	fi
 
-    ohai "Running self-cleanup..."
-    rm -rf "${WORKDIR}"
+	ohai "Running self-cleanup..."
+	rm -rf "${WORKDIR}"
 
-    DONE_CLEANUP=1
+	DONE_CLEANUP=1
 }
 
 throw_platform_unsupport() {
-    error "Platform $OSTYPE does not supported!"
+	error "Platform $OSTYPE does not supported!"
 }
 
 execute "main" "$@"
