@@ -102,8 +102,8 @@ echo "Welcome to the team 🙌"
 echo "If it's your first day today, we'd just like you to know how happy we are to have you with us 😃"
 
 echo    # (optional) move to a new line
-echo "To help you getting started we have prepared an automated seup script for your computer. "
-echo "Please run the following command to install and configure all necessary softwares and tools."
+echo "To help you getting started we have prepared an automated seup script for your computer."
+echo "Please accept the below question to install and configure all necessary softwares and tools."
 
 echo    # (optional) move to a new line
 read -p "Do you want to continue? [y/n]: " -n 1 -r
