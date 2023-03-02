@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Welcome to the team 🙌
+#
+# To help you getting started we have prepared an automated seup script for your computer.
+# Please run the following command to install and configure all necessary softwares and tools.
+#
+# curl -o- https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | sh
+#
+
 taps=(
 	'homebrew/cask-fonts'
 	'pp-spaces/khmer-unicode'
