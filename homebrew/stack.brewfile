@@ -1,5 +1,0 @@
-# AWS
-brew "awscli"
-
-# Hashicorp
-cask "vagrant"
