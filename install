@@ -114,9 +114,19 @@ then
 fi
 
 #
+# Check if Homebrew is installed
+# If not found, install it
+#
+if [ ! "$(command -v brew)" ]; then
+	ohai "Install Homebrew"
+	curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+fi
+
+#
 # Update Brew Repository
 #
 execute brew update
+echo    # (optional) move to a new line
 
 #
 # Add Brew Tap repositories
@@ -158,4 +168,5 @@ echo    # (optional) move to a new line
 execute brew cleanup
 
 # Done
+echo    # (optional) move to a new line
 echo "🎉 Installation successful!"
