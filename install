@@ -114,6 +114,11 @@ then
 fi
 
 #
+# Update Brew Repository
+#
+execute brew update
+
+#
 # Add Brew Tap repositories
 #
 echo    # (optional) move to a new line
@@ -146,6 +151,11 @@ for item in "${casks[@]}"; do
 	echo    # (optional) move to a new line
 done
 echo    # (optional) move to a new line
+
+#
+# Brew Cleanup
+#
+execute brew cleanup
 
 # Done
 echo "🎉 Installation successful!"
