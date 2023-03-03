@@ -34,6 +34,7 @@ Here a list of thing that the script will be installing.
 - `jq`
 - `tree`
 - `watch`
+- `openfortivpn`
 - `soramitsukhmer/tap/lockrun`
 - `soramitsukhmer/tap/sshpass`
 
