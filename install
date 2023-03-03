@@ -21,6 +21,7 @@ formulae=(
 	'jq'
 	'tree'
 	'watch'
+	'openfortivpn'
 
 	'soramitsukhmer/tap/lockrun'
 	'soramitsukhmer/tap/sshpass'
