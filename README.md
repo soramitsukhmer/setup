@@ -2,8 +2,6 @@
 
 An automated platform setup and provisioning scripts for @soramitsukhmer.
 
-> Requested by @phuylai-oeung and @phyrumsk
-
 ## One-Click Install
 
 Run the command below to install and configure all necessary softwares and tools.
