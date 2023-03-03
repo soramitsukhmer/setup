@@ -1,4 +1,4 @@
-# @soramitsukhmer/setup
+## About
 
 An automated platform setup and provisioning scripts for @soramitsukhmer.
 
