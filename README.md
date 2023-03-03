@@ -4,10 +4,19 @@ An automated platform setup and provisioning scripts for @soramitsukhmer.
 
 ## One-Click Install
 
+### Homebrew
+This setup script required **Homebrew** to be installed. If you already have **Homebrew** installed, please proceed to the next step.
+
+```
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+```
+
+### Bootstrap
+
 Run the command below to install and configure all necessary softwares and tools.
 
 ```sh
-curl -o- https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | sh
+curl -fsSL https://raw.githubusercontent.com/soramitsukhmer/setup/main/install | sh
 ```
 
 Here a list of thing that the script will be installing.
