@@ -11,15 +11,19 @@
 taps=(
 	'homebrew/cask-fonts'
 	'pp-spaces/khmer-unicode'
+	'soramitsukhmer/tap'
 )
 
 formulae=(
-	"gh"
+	'gh'
 	'git'
 	'htop'
 	'jq'
 	'tree'
 	'watch'
+
+	'soramitsukhmer/tap/lockrun'
+	'soramitsukhmer/tap/sshpass'
 )
 
 casks=(
